@@ -1,0 +1,45 @@
+\header {
+    title = "Note Reading Exercises"
+}
+\version "2.18.2"
+
+{
+    \time 4/4
+    e' f' g' a' 
+}
+{
+    \time 4/4
+    a' b' c'' d'' 
+}
+{
+    \time 4/4
+    c'' b' a' g' 
+}
+{
+    \time 4/4
+    f'' f'' g'' a'' 
+}
+{
+    \time 4/4
+    g'' a'' f'' g'' 
+}
+{
+    \time 4/4
+    c'' b' c'' e'' 
+}
+{
+    \time 4/4
+    a' g' a' b' 
+}
+{
+    \time 4/4
+    e' d' c' d' 
+}
+{
+    \time 4/4
+    c''' b'' a'' b'' 
+}
+{
+    \time 4/4
+    g' a' g' a' 
+}
