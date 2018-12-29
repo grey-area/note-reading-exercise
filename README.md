@@ -1,49 +1,49 @@
-# Random Melody Generator
+# Melody and Sheet Music Generator
 
-Generate random melody under specific rules.
+Melody and midi generation forked from [random-midi](https://github.com/Jobsecond/random-midi) by [Jobsecond](https://github.com/Jobsecond).
 
-## Getting started
-### Prerequisites
-This project is written in [Python](https://www.python.org/) 3.6. I haven't tested in other versions.
+I use random-midi and [lilypond](http://lilypond.org/) (a program for typesetting sheet music in LaTeX) to generate short melodies and corresponding sheet music, intended for practising note reading for guitar.
 
-[MIDIUtil](https://github.com/MarkCWirt/MIDIUtil) library is used in my project. You can install it simply by using `pip`:
+## Prerequisites
+This project is written in [Python](https://www.python.org/) 3.6.
+
+Install [MIDIUtil](https://github.com/MarkCWirt/MIDIUtil) with `pip`:
 
 ```console
 pip install MIDIUtil
 ```
 
-### How to use?
-Simply run `main.py`. A standard MIDI file will be generated in `output` folder. The filename is `midi_{timestamp}.mid`.
+Install [lilypond](http://lilypond.org/) with apt:
 
-You can play it using a media player (e.g. Windows Media Player) or import it into a Digital Audio Workstation (DAW).
+```console
+sudo apt-get install lilypond
+```
+
+In order to play midi files you may want to install timidity:
+
+```console
+sudo apt-get install timidity timidity-interfaces-extra
+```
+
+or VLC and the appropriate plugin:
+
+
+```console
+sudo apt-get install vlc vlc-plugin-fluidsynth
+```
+
+## How to use?
+Simply run `main.py`. A standard MIDI file will be generated in `output` folder. The filename is `{timestamp}.mid`. You'll also find a PDF file of the corresponding sheet music in `output/{timestamp}.pdf`, and the text file compiled by lilypond into this sheet music in `output/{timestamp}.txt`.
+
+The melodies produced are very short: by default, 10 melodies of four notes each are generated.
 
 ## Customize
-By default, the melody is in major pentatonic scale, chord progression is C-Am-F-G (1-6-4-5), and percussion pattern is fixed. Also, the interval of notes within a phrase is constrained.
 
-The rules can be modified in `rules.json`.
+There are two optional command-line arguments:
 
-You can also adjust the length of song and tempo in `song_settings.json`.
 
-### rules.json
+```console
+python main.py --tempo <tempo> --length <length>
+```
 
-| Parameter  | Description |
-| ------------- | ------------- |
-| `notes`  | Defines the notes used for composition.  |
-| `interval_upper`  | Defines the upper bound of interval of notes. The values in this list will be randomly chosen.  |
-| `interval_lower`  | Defines the lower bound of interval of notes. The values in this list will be randomly chosen.  |
-| `rhythm`  | Defines rhythm pattern for melody. The numbers are in beats (quarter notes).  |
-| `seq_chord` | Defines the chord sequence. Notes in each sub-array will be played simultaneously to form a chord.  |
-| `seq_perc` | Defines the percussion sequence. The first element in the sub-array denotes the drum sound, and the second element denotes time value in beats.  |
-| `velocity` | Defines the velocity of strong, intermediate and weak beats.  |
-
-### song_settings.json
-
-| Parameter  | Description |
-| ------------- | ------------- |
-| `length`  | Defines the length of song.  |
-| `tempo`  | Defines the tempo of song, measured in Beats per Minute (BPM).  |
-
-## Credits
-- The whole project is written in Python ([python.org](https://www.python.org/)).
-- The project uses [MIDIUtil](https://github.com/MarkCWirt/MIDIUtil) library by [MarkCWirt](https://github.com/MarkCWirt).
-- I would appreciate [ScoreDraft](https://github.com/fynv/ScoreDraft) by [fynv](https://github.com/fynv). My project is partially inspired by ScoreDraft. Since ScoreDraft uses scripts to compose music, I found its potential to automatically generate music. My algorithm of randomly generating melody was initially tested on ScoreDraft.
+The default tempo is slow (45). The length (with default 10) indicates the number of four note melodies to be generated.
