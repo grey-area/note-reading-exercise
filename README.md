@@ -1,4 +1,4 @@
-# Melody and Sheet Music Generator
+# Note Reading Exercise Generator
 
 Melody and midi generation forked from [random-midi](https://github.com/Jobsecond/random-midi) by [Jobsecond](https://github.com/Jobsecond).
 
@@ -6,6 +6,8 @@ I use random-midi and [lilypond](http://lilypond.org/) (a program for typesettin
 
 ## Prerequisites
 This project is written in [Python](https://www.python.org/) 3.6.
+
+### Generating MIDI and Sheet Music
 
 Install [MIDIUtil](https://github.com/MarkCWirt/MIDIUtil) with `pip`:
 
@@ -18,6 +20,8 @@ Install [lilypond](http://lilypond.org/) with apt:
 ```console
 sudo apt-get install lilypond
 ```
+
+### Playing MIDI files
 
 In order to play midi files you may want to install timidity:
 
