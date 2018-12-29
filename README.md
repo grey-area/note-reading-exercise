@@ -51,3 +51,9 @@ python main.py --tempo <tempo> --length <length>
 ```
 
 The default tempo is slow (45). The length (with default 10) indicates the number of four note melodies to be generated.
+
+## Example Output
+
+The following is sheet music generated for the sequence of melodies [found in the example MIDI file here](https://github.com/grey-area/note-reading-exercise/blob/master/examples/example.mid?raw=true). The [PDF can be found here](https://github.com/grey-area/note-reading-exercise/blob/master/examples/example.pdf?raw=true).
+
+![Example sheet music](./examples/example.png)
