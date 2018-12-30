@@ -17,14 +17,14 @@ parser.add_argument(
     help='Tempo'
 )
 parser.add_argument(
-    '--exercises', type=int,
+    '--num-exercises', type=int,
     default=10,
     help='Number of exercises'
 )
 parser.add_argument(
-    '--bars', type=int,
+    '--num-bars', type=int,
     default=2,
-    help='Number of exercises'
+    help='Number of bars per exercise'
 )
 args = parser.parse_args()
 
@@ -35,11 +35,11 @@ if __name__ == "__main__":
 
     with open('rules.json') as f:
         rules = json.load(f)
-    rules['rhythm'] = [[0.5] * (4 * args.bars - 1) + [4.5]]
+    rules['rhythm'] = [[0.5] * (4 * args.num_bars - 1) + [4.5]]
 
     my_masterpiece = Masterpiece(
         rules=rules,
-        length=args.exercises,
+        length=args.num_exercises,
         tempo=args.tempo)
     subfolder = "output"
     os.makedirs(subfolder, exist_ok=True)

@@ -39,18 +39,17 @@ sudo apt-get install vlc vlc-plugin-fluidsynth
 ## How to use?
 Simply run `main.py`. A standard MIDI file will be generated in `output` folder. The filename is `{timestamp}.mid`. You'll also find a PDF file of the corresponding sheet music in `output/{timestamp}.pdf`, and the text file compiled by lilypond into this sheet music in `output/{timestamp}.txt`.
 
-The melodies produced are very short: by default, 10 melodies of four notes each are generated.
+The melodies produced are very short: by default, 10 melodies of 8 notes are produced.
 
 ## Customize
 
-There are two optional command-line arguments:
-
+There are three optional command-line arguments:
 
 ```console
-python main.py --tempo <tempo> --length <length>
+python main.py --tempo <tempo> --num-exercises <# exercises> --num-bars <# bars per exercise>
 ```
 
-The default tempo is slow (45). The length (with default 10) indicates the number of four note melodies to be generated.
+The default tempo is slow (45). The default number of exercises (number of short melodies to be generated) is 10. The default number of bars is two, with four notes to a bar.
 
 ## Example Output
 

@@ -5,41 +5,41 @@
 
 {
     \time 4/4
-    e' f' g' a' 
+    e' d' e' d' c' d' f' g' 
 }
 {
     \time 4/4
-    a' b' c'' d'' 
+    e' d' e' e' f' d' e' g' 
 }
 {
     \time 4/4
-    c'' b' a' g' 
+    g'' b'' c''' b'' c''' a'' g'' a'' 
 }
 {
     \time 4/4
-    f'' f'' g'' a'' 
+    a'' b'' a'' a'' g'' e'' f'' g'' 
 }
 {
     \time 4/4
-    g'' a'' f'' g'' 
+    d'' e'' d'' c'' d'' c'' e'' d'' 
 }
 {
     \time 4/4
-    c'' b' c'' e'' 
+    a' g' f' e' f' g' b' a' 
 }
 {
     \time 4/4
-    a' g' a' b' 
+    e' d' e' f' a' f' g' f' 
 }
 {
     \time 4/4
-    e' d' c' d' 
+    c' d' c' d' e' d' e' f' 
 }
 {
     \time 4/4
-    c''' b'' a'' b'' 
+    d'' d'' e'' c'' d'' c'' b' g' 
 }
 {
     \time 4/4
-    g' a' g' a' 
+    f'' g'' f'' g'' f'' e'' c'' d'' 
 }
