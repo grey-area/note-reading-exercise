@@ -1,23 +1,16 @@
 # -*- coding: utf-8 -*-
 
-import json
 from midiutil.MidiFile import MIDIFile
 from randomnote import RandomNote
 
 
 class Masterpiece(object):
-    def __init__(self, rules_path="rules.json", length=4, tempo=90):
-        self.rules_path = rules_path
+    def __init__(self, rules, length=4, tempo=90):
         self.length = length
         self.tempo = tempo
 
-        rules_file = open(rules_path, "r")
-        rules = json.load(rules_file)
-        rules_file.close()
-        self.rhythm = rules["rhythm"]
-        self.velocity = rules["velocity"]
+        self.rules = rules
         self.rn = RandomNote(rules["notes"], rules["interval_upper"], rules["interval_lower"])
-        self.notes = rules['notes']
 
         self.MyMIDI = MIDIFile(3)
         self.current_track_number = 0
@@ -28,13 +21,13 @@ class Masterpiece(object):
         lilypond_str += '\\version "2.18.2"\n\n'
 
         for i in range(self.length):
-            for phrase in self.rhythm:
+            for phrase in self.rules['rhythm']:
                 lilypond_str += '{\n    \\time 4/4\n    '
                 self.rn.reset()
                 for duration in phrase:
                     note = self.rn.random_note()
                     seq_melody.append((note, duration))
-                    note_index = self.notes.index(note)
+                    note_index = self.rules['notes'].index(note)
                     offset = note_index % 7
                     note_name = chr(ord('a') + (offset + 2) % 7)
                     note_name += "'" * (note_index // 7 + 1)
@@ -60,11 +53,11 @@ class Masterpiece(object):
         for pitch, duration in seq_melody:
             relative_pos = pos - int(pos / 4) * 4
             if 0 <= relative_pos < 1:
-                vol = self.velocity["strong"]
+                vol = self.rules['velocity']['strong']
             elif 2 <= relative_pos < 3:
-                vol = self.velocity["intermediate"]
+                vol = self.rules['velocity']['intermediate']
             else:
-                vol = self.velocity["weak"]
+                vol = self.rules['velocity']['weak']
             self.MyMIDI.addNote(
                 track=self.current_track_number,
                 channel=0, pitch=pitch, time=pos, duration=duration, volume=vol)
