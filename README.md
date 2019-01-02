@@ -43,13 +43,21 @@ The melodies produced are very short: by default, 10 melodies of 8 notes are pro
 
 ## Customize
 
-There are three optional command-line arguments:
+There are four optional command-line arguments:
 
 ```console
-python main.py --tempo <tempo> --num-exercises <# exercises> --num-bars <# bars per exercise>
+python main.py --tempo <tempo> --num-exercises <# exercises> --num-bars <# bars per exercise> --key <key>
 ```
 
 The default tempo is slow (45). The default number of exercises (number of short melodies to be generated) is 10. The default number of bars is two, with four notes to a bar.
+
+Keys are A through G. Sharp and flat keys are available by adding an `is` or `es` suffix respectively (taken from Lilypond's note naming convention), so, for example,
+
+```console
+python main.py --key ges
+```
+
+will produce exercises using the G♯ major scale. In the produced sheet music, accidentals are used rather than indicating the key signature.
 
 ## Example Output
 

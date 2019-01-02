@@ -1,45 +1,76 @@
-\header {
-    title = "Note Reading Exercises"
-}
 \version "2.18.2"
+
+\header {
+    title = "Note Reading Exercises in C Major"
+}
 
 {
     \time 4/4
-    e' d' e' d' c' d' f' g' 
+    \key c \major
+    \transpose c c {
+        b'' c''' b'' b'' a'' c''' b'' a'' 
+    }
 }
 {
     \time 4/4
-    e' d' e' e' f' d' e' g' 
+    \key c \major
+    \transpose c c {
+        c'' d'' e'' d'' e'' d'' c'' d'' 
+    }
 }
 {
     \time 4/4
-    g'' b'' c''' b'' c''' a'' g'' a'' 
+    \key c \major
+    \transpose c c {
+        d'' c'' d'' e'' f'' e'' d'' c'' 
+    }
 }
 {
     \time 4/4
-    a'' b'' a'' a'' g'' e'' f'' g'' 
+    \key c \major
+    \transpose c c {
+        f' g' b' c'' b' a' g' b' 
+    }
 }
 {
     \time 4/4
-    d'' e'' d'' c'' d'' c'' e'' d'' 
+    \key c \major
+    \transpose c c {
+        f' e' d' e' c' d' c' d' 
+    }
 }
 {
     \time 4/4
-    a' g' f' e' f' g' b' a' 
+    \key c \major
+    \transpose c c {
+        f'' g'' a'' g'' f'' f'' e'' d'' 
+    }
 }
 {
     \time 4/4
-    e' d' e' f' a' f' g' f' 
+    \key c \major
+    \transpose c c {
+        g' a' g' f' g' f' g' f' 
+    }
 }
 {
     \time 4/4
-    c' d' c' d' e' d' e' f' 
+    \key c \major
+    \transpose c c {
+        f' g' a' f' d' c' e' d' 
+    }
 }
 {
     \time 4/4
-    d'' d'' e'' c'' d'' c'' b' g' 
+    \key c \major
+    \transpose c c {
+        b'' c''' b'' a'' b'' c''' b'' a'' 
+    }
 }
 {
     \time 4/4
-    f'' g'' f'' g'' f'' e'' c'' d'' 
+    \key c \major
+    \transpose c c {
+        f'' g'' f'' g'' a'' g'' f'' a'' 
+    }
 }

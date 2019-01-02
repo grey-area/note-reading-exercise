@@ -20,7 +20,7 @@ if __name__ == '__main__':
         rules = json.load(f)
     rhythm = [[0.5] * (4 * args.num_bars - 1) + [4.5]]
 
-    my_masterpiece = Masterpiece(rules, rhythm, args.num_exercises, args.tempo)
+    my_masterpiece = Masterpiece(rules, rhythm, args)
     lilypond_str = my_masterpiece.create_midi_file(f'{filename_str}.mid')
 
     with open(f'{filename_str}.txt', 'w') as f:
