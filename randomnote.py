@@ -16,7 +16,6 @@ class RandomNote(object):
             if not self.last_played:
                 break
             else:
-                # 音程限制
                 if random.choice(self.interval_upper) \
                         >= abs(note - self.last_played) \
                         >= random.choice(self.interval_lower):
